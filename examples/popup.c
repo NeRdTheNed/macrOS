@@ -48,9 +48,9 @@ int main (int argc, char** argv) {
     /* Display a popup message */
     Class NSStringClass = (Class) class("NSString");
     SEL stringWithUTF8StringSelector = sel("stringWithUTF8String:");
-    /* NSString* messageTitle = [NSString stringWithUTF8String:title]*/
+    /*NSString* messageTitle = [NSString stringWithUTF8String:title];*/
     id messageTitle = objc_msgSend_t(id, const char*)((id) NSStringClass, stringWithUTF8StringSelector, title);
-    /* NSString* messageText = [NSString stringWithUTF8String:message]*/
+    /*NSString* messageText = [NSString stringWithUTF8String:message];*/
     id messageText = objc_msgSend_t(id, const char*)((id) NSStringClass, stringWithUTF8StringSelector, text);
 #if !defined(MAC_OS_X_VERSION_10_3) || MAC_OS_X_VERSION_MIN_REQUIRED < MAC_OS_X_VERSION_10_3
 
