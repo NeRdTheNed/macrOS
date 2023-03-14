@@ -11,8 +11,8 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
       - name: Install dependencies
-         run: brew install boost
+        run: brew install boost
       - name: Configure library
-         run: cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
+        run: cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
       - name: Build library
-         run: cmake --build build --config Release -j $(sysctl -n hw.logicalcpu)
+        run: cmake --build build --config Release -j $(sysctl -n hw.logicalcpu)
