@@ -16,3 +16,8 @@ jobs:
         run: cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
       - name: Build library
         run: cmake --build build --config Release -j $(sysctl -n hw.logicalcpu)
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: Examples
+          path: build/examples/popup
