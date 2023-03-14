@@ -68,6 +68,8 @@ without technically using any Objective-C.
 - better documentation / doxygen
 - detecting and optimising against future version ranges
 - testing on macOS pre-10.4 and ppc64
+- non-c language support
+- support for compiling on non-macOS platforms
 
 Issues and PRs are welcome.
 
