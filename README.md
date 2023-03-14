@@ -49,6 +49,11 @@ target_link_libraries(${PROJECT_NAME} PRIVATE macrOS)
 
 The [examples folder](examples) contains examples of how to use macrOS,
 including calling Objective-C functions.
+Build the examples (and this library) by running these commands:
+```bash
+cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
+cmake --build build --config Release -j $(sysctl -n hw.logicalcpu)
+```
 
 ## Why?
 
