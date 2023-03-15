@@ -58,7 +58,6 @@ target_include_directories(${PROJECT_NAME} PUBLIC ${Boost_INCLUDE_DIRS})
 
 # Link with Foundation and the Objective-C runtime
 target_link_libraries(${PROJECT_NAME} PRIVATE "-framework Foundation")
-target_link_libraries(${PROJECT_NAME}_headers INTERFACE "-framework Foundation")
 
 # Link with CoreServices if needed. TODO Replace with less fragile check
 
@@ -78,8 +77,6 @@ try_compile(
 # from CoreServices.
 if(NOT DID_VERSION_CHECK_COMPILE AND VERSION_CHECK_OUT MATCHES ".*Gestalt")
   target_link_libraries(${PROJECT_NAME} PRIVATE "-framework CoreServices")
-  target_link_libraries(${PROJECT_NAME}_headers
-                        INTERFACE "-framework CoreServices")
 endif()
 
 # Allow weak linking with old SDKs. TODO Replace with less fragile check
