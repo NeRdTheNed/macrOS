@@ -34,6 +34,7 @@ macrOS_NOT_COMMONLY_CALLED void initObjCRuntime(void);
 #include <objc/objc-runtime.h>
 #if defined(MAC_OS_X_VERSION_10_2) && MAC_OS_X_VERSION_MIN_REQUIRED >= MAC_OS_X_VERSION_10_2
 /* Define some methods on old SDKs */
+BOOL class_addMethod(Class class, SEL name, IMP imp, const char* types) macrOS_AVAILABLE_MACOS(10.5) macrOS_WEAK_IMPORT_BEFORE(10, 5);
 Class objc_allocateClassPair(Class super, const char* name, size_t bonus) macrOS_AVAILABLE_MACOS(10.5) macrOS_WEAK_IMPORT_BEFORE(10, 5);
 void objc_registerClassPair(Class class) macrOS_AVAILABLE_MACOS(10.5) macrOS_WEAK_IMPORT_BEFORE(10, 5);
 Protocol* objc_getProtocol(const char* name) macrOS_AVAILABLE_MACOS(10.5) macrOS_WEAK_IMPORT_BEFORE(10, 5);

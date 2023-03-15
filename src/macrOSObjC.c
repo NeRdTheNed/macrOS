@@ -40,8 +40,6 @@ macrOS_NOT_COMMONLY_CALLED void initObjCRuntime(void) {
 #include <stdlib.h>
 #include <string.h>
 
-BOOL class_addMethod(Class class, SEL name, IMP imp, const char* types);
-
 BOOL wrapper_addClassMethod(Class class, SEL name, IMP imp, const char* types) {
     /* Weak linking doesn't work on macOS 10.1 and below. TODO Dynamically load this? */
 #if defined(MAC_OS_X_VERSION_10_2) && MAC_OS_X_VERSION_MIN_REQUIRED >= MAC_OS_X_VERSION_10_2
