@@ -1,6 +1,7 @@
 # macOS junk files
 .DS_Store
 
-# Binary files
+# Binary / build files
 build/
+Testing/
 *.class

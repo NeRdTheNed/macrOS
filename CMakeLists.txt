@@ -7,7 +7,8 @@ project(
   VERSION 1.0.0
   LANGUAGES C)
 
-option(macrOS_BUILD_EXAMPLES "Build the example programs" ON)
+option(macrOS_BUILD_EXAMPLES "Build macrOS example programs" ON)
+option(macrOS_BUILD_TESTS "Build macrOS tests" ON)
 
 set(DEFAULT_BUILD_TYPE "Release")
 
@@ -127,4 +128,8 @@ if(Java_FOUND)
   add_dependencies(${PROJECT_NAME}_headers genAvail)
 else()
   message(WARNING "Java not found, header files not regenerated")
+endif()
+
+if(macrOS_BUILD_TESTS)
+  add_subdirectory(test)
 endif()
