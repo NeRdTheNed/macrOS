@@ -5,6 +5,8 @@
 #include <boost/preprocessor/control/iif.hpp>
 #include <boost/preprocessor/logical/not.hpp>
 
+#include <stdbool.h>
+
 #include "baseMacros.h"
 
 #include "Avail.h"
