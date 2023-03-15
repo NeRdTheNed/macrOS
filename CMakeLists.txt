@@ -60,6 +60,28 @@ target_include_directories(${PROJECT_NAME} PUBLIC ${Boost_INCLUDE_DIRS})
 target_link_libraries(${PROJECT_NAME} PRIVATE "-framework Foundation")
 target_link_libraries(${PROJECT_NAME}_headers INTERFACE "-framework Foundation")
 
+# Link with CoreServices if needed. TODO Replace with less fragile check
+
+# Check if the version check test compiles
+try_compile(
+  DID_VERSION_CHECK_COMPILE
+  "${CMAKE_CURRENT_BINARY_DIR}/try_compile_versionCheck"
+  SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/src/FindVersion.c
+          ${CMAKE_CURRENT_SOURCE_DIR}/src/macrOSObjC.c
+          ${CMAKE_CURRENT_SOURCE_DIR}/test/versionCheck.c
+  CMAKE_FLAGS
+    "-DINCLUDE_DIRECTORIES=${CMAKE_CURRENT_SOURCE_DIR}/include;${Boost_INCLUDE_DIRS}"
+    "-DLINK_LIBRARIES=-framework Foundation"
+  OUTPUT_VARIABLE VERSION_CHECK_OUT)
+
+# If it fails and Gestalt is mentioned, link with CoreServices, as Gestalt is
+# from CoreServices.
+if(NOT DID_VERSION_CHECK_COMPILE AND VERSION_CHECK_OUT MATCHES ".*Gestalt")
+  target_link_libraries(${PROJECT_NAME} PRIVATE "-framework CoreServices")
+  target_link_libraries(${PROJECT_NAME}_headers
+                        INTERFACE "-framework CoreServices")
+endif()
+
 if(macrOS_BUILD_EXAMPLES)
   add_subdirectory(examples)
 endif()
