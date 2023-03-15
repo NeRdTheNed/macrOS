@@ -1,7 +1,7 @@
 #include <macrOS/FindVersion.h>
 #include <stdlib.h>
 
-int main (int argc, char** argv) {
+int main(int argc, char** argv) {
     macrOS_IFR_RUNTIME_LESS_MAC_OS_MM(10, 0) {
         return EXIT_FAILURE;
     }
