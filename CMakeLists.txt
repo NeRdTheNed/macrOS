@@ -55,6 +55,10 @@ target_include_directories(${PROJECT_NAME}_headers
                            INTERFACE ${Boost_INCLUDE_DIRS})
 target_include_directories(${PROJECT_NAME} PUBLIC ${Boost_INCLUDE_DIRS})
 
+# Link with Foundation and the Objective-C runtime
+target_link_libraries(${PROJECT_NAME} PRIVATE "-framework Foundation")
+target_link_libraries(${PROJECT_NAME}_headers INTERFACE "-framework Foundation")
+
 if(macrOS_BUILD_EXAMPLES)
   add_subdirectory(examples)
 endif()
