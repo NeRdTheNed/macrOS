@@ -13,7 +13,7 @@ jobs:
       - name: Install dependencies
         run: brew install boost
       - name: Configure library
-        run: cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
+        run: cmake -S . -B build -DCMAKE_BUILD_TYPE=Release -DCMAKE_OSX_DEPLOYMENT_TARGET=10.5 -DCMAKE_OSX_ARCHITECTURES="x86_64;arm64"
       - name: Build library
         run: cmake --build build --config Release -j $(sysctl -n hw.logicalcpu)
       - name: Run tests
@@ -23,4 +23,4 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: Examples
-          path: build/examples/popup
+          path: build/examples/*.app
