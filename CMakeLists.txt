@@ -82,6 +82,37 @@ if(NOT DID_VERSION_CHECK_COMPILE AND VERSION_CHECK_OUT MATCHES ".*Gestalt")
                         INTERFACE "-framework CoreServices")
 endif()
 
+# Allow weak linking with old SDKs. TODO Replace with less fragile check
+
+# Check if the Objective-C test compiles
+try_compile(
+  DID_OBJC_TEST_COMPILE "${CMAKE_CURRENT_BINARY_DIR}/try_compile_objcTest"
+  SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/src/FindVersion.c
+          ${CMAKE_CURRENT_SOURCE_DIR}/src/macrOSObjC.c
+          ${CMAKE_CURRENT_SOURCE_DIR}/test/objcTest.c
+  CMAKE_FLAGS
+    "-DINCLUDE_DIRECTORIES=${CMAKE_CURRENT_SOURCE_DIR}/include;${Boost_INCLUDE_DIRS}"
+    "-DLINK_LIBRARIES=-framework Foundation"
+  OUTPUT_VARIABLE OBJC_TEST_OUT)
+
+# Allow certain symbols to not be defined, as they're weakly linked
+if(NOT DID_OBJC_TEST_COMPILE
+   AND OBJC_TEST_OUT
+       MATCHES
+       ".*(_class_addMethod|_objc_allocateClassPair|_objc_registerClassPair|_objc_getProtocol|_class_addProtocol)"
+)
+  target_link_options(
+    ${PROJECT_NAME}
+    PUBLIC
+    "LINKER:-U,_class_addMethod,-U,_objc_allocateClassPair,-U,_objc_registerClassPair,-U,_objc_getProtocol,-U,_class_addProtocol"
+  )
+  target_link_options(
+    ${PROJECT_NAME}_headers
+    INTERFACE
+    "LINKER:-U,_class_addMethod,-U,_objc_allocateClassPair,-U,_objc_registerClassPair,-U,_objc_getProtocol,-U,_class_addProtocol"
+  )
+endif()
+
 if(macrOS_BUILD_EXAMPLES)
   add_subdirectory(examples)
 endif()
