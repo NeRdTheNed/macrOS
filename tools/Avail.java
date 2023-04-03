@@ -202,7 +202,8 @@ final class Avail {
         new MacVersion(11, 3, 0),
         new MacVersion(12, 0, 0),
         new MacVersion(13, 0, 0),
-        new MacVersion(13, 1, 0)
+        new MacVersion(13, 1, 0),
+        new MacVersion(13, 3, 0)
     };
 
     /**

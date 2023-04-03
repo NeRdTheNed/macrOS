@@ -115,6 +115,9 @@
 #ifndef MAC_OS_VERSION_13_1
 #define MAC_OS_VERSION_13_1 130100
 #endif
+#ifndef MAC_OS_VERSION_13_3
+#define MAC_OS_VERSION_13_3 130300
+#endif
 
 #if defined(MAC_OS_X_VERSION_10_0) && MAC_OS_X_VERSION_MIN_REQUIRED >= MAC_OS_X_VERSION_10_0
 #define macrOS_ALWAYS_HAVE_10_0_0
@@ -267,6 +270,10 @@
 #define macrOS_NEVER_HAVE_13_0_0
 #define macrOS_ALWAYS_HAVE_13_1_0
 #endif
+#if defined(MAC_OS_VERSION_13_3) && MAC_OS_X_VERSION_MIN_REQUIRED >= MAC_OS_VERSION_13_3
+#define macrOS_NEVER_HAVE_13_1_0
+#define macrOS_ALWAYS_HAVE_13_3_0
+#endif
 
 #if defined(__ppc64__) || defined(__ppc__)
 #ifndef macrOS_NEVER_HAVE_10_7_0
@@ -362,6 +369,9 @@
 #ifndef macrOS_NEVER_HAVE_13_1_0
 #define macrOS_NEVER_HAVE_13_1_0
 #endif
+#ifndef macrOS_NEVER_HAVE_13_3_0
+#define macrOS_NEVER_HAVE_13_3_0
+#endif
 #endif
 
 #if defined(__i386__) || defined(__x86_64__)
@@ -412,6 +422,9 @@
 #endif
 #ifndef macrOS_NEVER_HAVE_13_1_0
 #define macrOS_NEVER_HAVE_13_1_0
+#endif
+#ifndef macrOS_NEVER_HAVE_13_3_0
+#define macrOS_NEVER_HAVE_13_3_0
 #endif
 #endif
 
