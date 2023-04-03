@@ -1,5 +1,5 @@
-#ifndef macrOS_EXTENDED_MAC_OS_VERSION_MACRO_H
-#define macrOS_EXTENDED_MAC_OS_VERSION_MACRO_H
+#ifndef macrOS_EXTENDED_MAC_OS_FIND_VERSION_H
+#define macrOS_EXTENDED_MAC_OS_FIND_VERSION_H
 
 #include <boost/preprocessor/control/expr_iif.hpp>
 #include <boost/preprocessor/control/iif.hpp>
@@ -77,4 +77,4 @@ bool isAvalible(uint32_t major, uint32_t minor, uint32_t bugfix);
 #define macrOS_RUNTIME_HAS_MAC_OS_MMF_IMP(major, minor, bugfix) isAvalible(major, minor, bugfix)
 #endif /* macrOS_HAS_BUILTIN(__builtin_available) */
 
-#endif /* macrOS_EXTENDED_MAC_OS_VERSION_MACRO_H */
+#endif /* macrOS_EXTENDED_MAC_OS_FIND_VERSION_H */
