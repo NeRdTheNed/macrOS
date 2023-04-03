@@ -169,7 +169,7 @@ if(Java_FOUND)
       "${CMAKE_CURRENT_SOURCE_DIR}/tools/Avail.class"
       "${CMAKE_CURRENT_SOURCE_DIR}/tools/MacVersion.class"
     DEPENDS "tools/Avail.java"
-    COMMENT "Generating macOS availibility headers")
+    COMMENT "Generating macOS availability headers")
 
   add_custom_target(
     genAvail
