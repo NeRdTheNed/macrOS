@@ -2,6 +2,8 @@
 
 > macOS macros (and utility functions).
 
+[![Build](https://github.com/NeRdTheNed/macrOS/actions/workflows/build.yml/badge.svg)](https://github.com/NeRdTheNed/macrOS/actions/workflows/build.yml)
+
 - Avail.h: Extended macOS version macros,
   guaranteed to define every known macOS version constant.
   Additionally includes defines for macOS version ranges which a program will never run on,
