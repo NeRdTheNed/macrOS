@@ -193,17 +193,30 @@ final class Avail {
         new MacVersion(10, 14, 0),
         new MacVersion(10, 14, 1),
         new MacVersion(10, 14, 4),
+        new MacVersion(10, 14, 5),
         new MacVersion(10, 14, 6),
         new MacVersion(10, 15, 0),
         new MacVersion(10, 15, 1),
+        new MacVersion(10, 15, 4),
         new MacVersion(10, 16, 0),
         new MacVersion(11, 0, 0),
         new MacVersion(11, 1, 0),
         new MacVersion(11, 3, 0),
+        new MacVersion(11, 4, 0),
+        new MacVersion(11, 5, 0),
+        new MacVersion(11, 6, 0),
         new MacVersion(12, 0, 0),
+        new MacVersion(12, 1, 0),
+        new MacVersion(12, 2, 0),
+        new MacVersion(12, 3, 0),
+        new MacVersion(12, 4, 0),
+        new MacVersion(12, 5, 0),
         new MacVersion(13, 0, 0),
         new MacVersion(13, 1, 0),
-        new MacVersion(13, 3, 0)
+        new MacVersion(13, 2, 0),
+        new MacVersion(13, 3, 0),
+        new MacVersion(13, 4, 0),
+        new MacVersion(14, 0, 0)
     };
 
     /**

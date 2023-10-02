@@ -85,6 +85,9 @@
 #ifndef MAC_OS_X_VERSION_10_14_4
 #define MAC_OS_X_VERSION_10_14_4 101404
 #endif
+#ifndef MAC_OS_X_VERSION_10_14_5
+#define MAC_OS_X_VERSION_10_14_5 101405
+#endif
 #ifndef MAC_OS_X_VERSION_10_14_6
 #define MAC_OS_X_VERSION_10_14_6 101406
 #endif
@@ -93,6 +96,9 @@
 #endif
 #ifndef MAC_OS_X_VERSION_10_15_1
 #define MAC_OS_X_VERSION_10_15_1 101501
+#endif
+#ifndef MAC_OS_X_VERSION_10_15_4
+#define MAC_OS_X_VERSION_10_15_4 101504
 #endif
 #ifndef MAC_OS_X_VERSION_10_16
 #define MAC_OS_X_VERSION_10_16 101600
@@ -106,8 +112,32 @@
 #ifndef MAC_OS_VERSION_11_3
 #define MAC_OS_VERSION_11_3 110300
 #endif
+#ifndef MAC_OS_VERSION_11_4
+#define MAC_OS_VERSION_11_4 110400
+#endif
+#ifndef MAC_OS_VERSION_11_5
+#define MAC_OS_VERSION_11_5 110500
+#endif
+#ifndef MAC_OS_VERSION_11_6
+#define MAC_OS_VERSION_11_6 110600
+#endif
 #ifndef MAC_OS_VERSION_12_0
 #define MAC_OS_VERSION_12_0 120000
+#endif
+#ifndef MAC_OS_VERSION_12_1
+#define MAC_OS_VERSION_12_1 120100
+#endif
+#ifndef MAC_OS_VERSION_12_2
+#define MAC_OS_VERSION_12_2 120200
+#endif
+#ifndef MAC_OS_VERSION_12_3
+#define MAC_OS_VERSION_12_3 120300
+#endif
+#ifndef MAC_OS_VERSION_12_4
+#define MAC_OS_VERSION_12_4 120400
+#endif
+#ifndef MAC_OS_VERSION_12_5
+#define MAC_OS_VERSION_12_5 120500
 #endif
 #ifndef MAC_OS_VERSION_13_0
 #define MAC_OS_VERSION_13_0 130000
@@ -115,8 +145,17 @@
 #ifndef MAC_OS_VERSION_13_1
 #define MAC_OS_VERSION_13_1 130100
 #endif
+#ifndef MAC_OS_VERSION_13_2
+#define MAC_OS_VERSION_13_2 130200
+#endif
 #ifndef MAC_OS_VERSION_13_3
 #define MAC_OS_VERSION_13_3 130300
+#endif
+#ifndef MAC_OS_VERSION_13_4
+#define MAC_OS_VERSION_13_4 130400
+#endif
+#ifndef MAC_OS_VERSION_14_0
+#define MAC_OS_VERSION_14_0 140000
 #endif
 
 #if defined(MAC_OS_X_VERSION_10_0) && MAC_OS_X_VERSION_MIN_REQUIRED >= MAC_OS_X_VERSION_10_0
@@ -230,8 +269,12 @@
 #define macrOS_NEVER_HAVE_10_14_1
 #define macrOS_ALWAYS_HAVE_10_14_4
 #endif
-#if defined(MAC_OS_X_VERSION_10_14_6) && MAC_OS_X_VERSION_MIN_REQUIRED >= MAC_OS_X_VERSION_10_14_6
+#if defined(MAC_OS_X_VERSION_10_14_5) && MAC_OS_X_VERSION_MIN_REQUIRED >= MAC_OS_X_VERSION_10_14_5
 #define macrOS_NEVER_HAVE_10_14_4
+#define macrOS_ALWAYS_HAVE_10_14_5
+#endif
+#if defined(MAC_OS_X_VERSION_10_14_6) && MAC_OS_X_VERSION_MIN_REQUIRED >= MAC_OS_X_VERSION_10_14_6
+#define macrOS_NEVER_HAVE_10_14_5
 #define macrOS_ALWAYS_HAVE_10_14_6
 #endif
 #if defined(MAC_OS_X_VERSION_10_15) && MAC_OS_X_VERSION_MIN_REQUIRED >= MAC_OS_X_VERSION_10_15
@@ -242,8 +285,12 @@
 #define macrOS_NEVER_HAVE_10_15_0
 #define macrOS_ALWAYS_HAVE_10_15_1
 #endif
-#if defined(MAC_OS_X_VERSION_10_16) && MAC_OS_X_VERSION_MIN_REQUIRED >= MAC_OS_X_VERSION_10_16
+#if defined(MAC_OS_X_VERSION_10_15_4) && MAC_OS_X_VERSION_MIN_REQUIRED >= MAC_OS_X_VERSION_10_15_4
 #define macrOS_NEVER_HAVE_10_15_1
+#define macrOS_ALWAYS_HAVE_10_15_4
+#endif
+#if defined(MAC_OS_X_VERSION_10_16) && MAC_OS_X_VERSION_MIN_REQUIRED >= MAC_OS_X_VERSION_10_16
+#define macrOS_NEVER_HAVE_10_15_4
 #define macrOS_ALWAYS_HAVE_10_16_0
 #endif
 #if defined(MAC_OS_VERSION_11_0) && MAC_OS_X_VERSION_MIN_REQUIRED >= MAC_OS_VERSION_11_0
@@ -258,21 +305,65 @@
 #define macrOS_NEVER_HAVE_11_1_0
 #define macrOS_ALWAYS_HAVE_11_3_0
 #endif
-#if defined(MAC_OS_VERSION_12_0) && MAC_OS_X_VERSION_MIN_REQUIRED >= MAC_OS_VERSION_12_0
+#if defined(MAC_OS_VERSION_11_4) && MAC_OS_X_VERSION_MIN_REQUIRED >= MAC_OS_VERSION_11_4
 #define macrOS_NEVER_HAVE_11_3_0
+#define macrOS_ALWAYS_HAVE_11_4_0
+#endif
+#if defined(MAC_OS_VERSION_11_5) && MAC_OS_X_VERSION_MIN_REQUIRED >= MAC_OS_VERSION_11_5
+#define macrOS_NEVER_HAVE_11_4_0
+#define macrOS_ALWAYS_HAVE_11_5_0
+#endif
+#if defined(MAC_OS_VERSION_11_6) && MAC_OS_X_VERSION_MIN_REQUIRED >= MAC_OS_VERSION_11_6
+#define macrOS_NEVER_HAVE_11_5_0
+#define macrOS_ALWAYS_HAVE_11_6_0
+#endif
+#if defined(MAC_OS_VERSION_12_0) && MAC_OS_X_VERSION_MIN_REQUIRED >= MAC_OS_VERSION_12_0
+#define macrOS_NEVER_HAVE_11_6_0
 #define macrOS_ALWAYS_HAVE_12_0_0
 #endif
-#if defined(MAC_OS_VERSION_13_0) && MAC_OS_X_VERSION_MIN_REQUIRED >= MAC_OS_VERSION_13_0
+#if defined(MAC_OS_VERSION_12_1) && MAC_OS_X_VERSION_MIN_REQUIRED >= MAC_OS_VERSION_12_1
 #define macrOS_NEVER_HAVE_12_0_0
+#define macrOS_ALWAYS_HAVE_12_1_0
+#endif
+#if defined(MAC_OS_VERSION_12_2) && MAC_OS_X_VERSION_MIN_REQUIRED >= MAC_OS_VERSION_12_2
+#define macrOS_NEVER_HAVE_12_1_0
+#define macrOS_ALWAYS_HAVE_12_2_0
+#endif
+#if defined(MAC_OS_VERSION_12_3) && MAC_OS_X_VERSION_MIN_REQUIRED >= MAC_OS_VERSION_12_3
+#define macrOS_NEVER_HAVE_12_2_0
+#define macrOS_ALWAYS_HAVE_12_3_0
+#endif
+#if defined(MAC_OS_VERSION_12_4) && MAC_OS_X_VERSION_MIN_REQUIRED >= MAC_OS_VERSION_12_4
+#define macrOS_NEVER_HAVE_12_3_0
+#define macrOS_ALWAYS_HAVE_12_4_0
+#endif
+#if defined(MAC_OS_VERSION_12_5) && MAC_OS_X_VERSION_MIN_REQUIRED >= MAC_OS_VERSION_12_5
+#define macrOS_NEVER_HAVE_12_4_0
+#define macrOS_ALWAYS_HAVE_12_5_0
+#endif
+#if defined(MAC_OS_VERSION_13_0) && MAC_OS_X_VERSION_MIN_REQUIRED >= MAC_OS_VERSION_13_0
+#define macrOS_NEVER_HAVE_12_5_0
 #define macrOS_ALWAYS_HAVE_13_0_0
 #endif
 #if defined(MAC_OS_VERSION_13_1) && MAC_OS_X_VERSION_MIN_REQUIRED >= MAC_OS_VERSION_13_1
 #define macrOS_NEVER_HAVE_13_0_0
 #define macrOS_ALWAYS_HAVE_13_1_0
 #endif
-#if defined(MAC_OS_VERSION_13_3) && MAC_OS_X_VERSION_MIN_REQUIRED >= MAC_OS_VERSION_13_3
+#if defined(MAC_OS_VERSION_13_2) && MAC_OS_X_VERSION_MIN_REQUIRED >= MAC_OS_VERSION_13_2
 #define macrOS_NEVER_HAVE_13_1_0
+#define macrOS_ALWAYS_HAVE_13_2_0
+#endif
+#if defined(MAC_OS_VERSION_13_3) && MAC_OS_X_VERSION_MIN_REQUIRED >= MAC_OS_VERSION_13_3
+#define macrOS_NEVER_HAVE_13_2_0
 #define macrOS_ALWAYS_HAVE_13_3_0
+#endif
+#if defined(MAC_OS_VERSION_13_4) && MAC_OS_X_VERSION_MIN_REQUIRED >= MAC_OS_VERSION_13_4
+#define macrOS_NEVER_HAVE_13_3_0
+#define macrOS_ALWAYS_HAVE_13_4_0
+#endif
+#if defined(MAC_OS_VERSION_14_0) && MAC_OS_X_VERSION_MIN_REQUIRED >= MAC_OS_VERSION_14_0
+#define macrOS_NEVER_HAVE_13_4_0
+#define macrOS_ALWAYS_HAVE_14_0_0
 #endif
 
 #if defined(__ppc64__) || defined(__ppc__)
@@ -339,6 +430,9 @@
 #ifndef macrOS_NEVER_HAVE_10_14_4
 #define macrOS_NEVER_HAVE_10_14_4
 #endif
+#ifndef macrOS_NEVER_HAVE_10_14_5
+#define macrOS_NEVER_HAVE_10_14_5
+#endif
 #ifndef macrOS_NEVER_HAVE_10_14_6
 #define macrOS_NEVER_HAVE_10_14_6
 #endif
@@ -347,6 +441,9 @@
 #endif
 #ifndef macrOS_NEVER_HAVE_10_15_1
 #define macrOS_NEVER_HAVE_10_15_1
+#endif
+#ifndef macrOS_NEVER_HAVE_10_15_4
+#define macrOS_NEVER_HAVE_10_15_4
 #endif
 #ifndef macrOS_NEVER_HAVE_10_16_0
 #define macrOS_NEVER_HAVE_10_16_0
@@ -360,8 +457,32 @@
 #ifndef macrOS_NEVER_HAVE_11_3_0
 #define macrOS_NEVER_HAVE_11_3_0
 #endif
+#ifndef macrOS_NEVER_HAVE_11_4_0
+#define macrOS_NEVER_HAVE_11_4_0
+#endif
+#ifndef macrOS_NEVER_HAVE_11_5_0
+#define macrOS_NEVER_HAVE_11_5_0
+#endif
+#ifndef macrOS_NEVER_HAVE_11_6_0
+#define macrOS_NEVER_HAVE_11_6_0
+#endif
 #ifndef macrOS_NEVER_HAVE_12_0_0
 #define macrOS_NEVER_HAVE_12_0_0
+#endif
+#ifndef macrOS_NEVER_HAVE_12_1_0
+#define macrOS_NEVER_HAVE_12_1_0
+#endif
+#ifndef macrOS_NEVER_HAVE_12_2_0
+#define macrOS_NEVER_HAVE_12_2_0
+#endif
+#ifndef macrOS_NEVER_HAVE_12_3_0
+#define macrOS_NEVER_HAVE_12_3_0
+#endif
+#ifndef macrOS_NEVER_HAVE_12_4_0
+#define macrOS_NEVER_HAVE_12_4_0
+#endif
+#ifndef macrOS_NEVER_HAVE_12_5_0
+#define macrOS_NEVER_HAVE_12_5_0
 #endif
 #ifndef macrOS_NEVER_HAVE_13_0_0
 #define macrOS_NEVER_HAVE_13_0_0
@@ -369,8 +490,17 @@
 #ifndef macrOS_NEVER_HAVE_13_1_0
 #define macrOS_NEVER_HAVE_13_1_0
 #endif
+#ifndef macrOS_NEVER_HAVE_13_2_0
+#define macrOS_NEVER_HAVE_13_2_0
+#endif
 #ifndef macrOS_NEVER_HAVE_13_3_0
 #define macrOS_NEVER_HAVE_13_3_0
+#endif
+#ifndef macrOS_NEVER_HAVE_13_4_0
+#define macrOS_NEVER_HAVE_13_4_0
+#endif
+#ifndef macrOS_NEVER_HAVE_14_0_0
+#define macrOS_NEVER_HAVE_14_0_0
 #endif
 #endif
 
@@ -402,6 +532,9 @@
 #ifndef macrOS_NEVER_HAVE_10_15_1
 #define macrOS_NEVER_HAVE_10_15_1
 #endif
+#ifndef macrOS_NEVER_HAVE_10_15_4
+#define macrOS_NEVER_HAVE_10_15_4
+#endif
 #ifndef macrOS_NEVER_HAVE_10_16_0
 #define macrOS_NEVER_HAVE_10_16_0
 #endif
@@ -414,8 +547,32 @@
 #ifndef macrOS_NEVER_HAVE_11_3_0
 #define macrOS_NEVER_HAVE_11_3_0
 #endif
+#ifndef macrOS_NEVER_HAVE_11_4_0
+#define macrOS_NEVER_HAVE_11_4_0
+#endif
+#ifndef macrOS_NEVER_HAVE_11_5_0
+#define macrOS_NEVER_HAVE_11_5_0
+#endif
+#ifndef macrOS_NEVER_HAVE_11_6_0
+#define macrOS_NEVER_HAVE_11_6_0
+#endif
 #ifndef macrOS_NEVER_HAVE_12_0_0
 #define macrOS_NEVER_HAVE_12_0_0
+#endif
+#ifndef macrOS_NEVER_HAVE_12_1_0
+#define macrOS_NEVER_HAVE_12_1_0
+#endif
+#ifndef macrOS_NEVER_HAVE_12_2_0
+#define macrOS_NEVER_HAVE_12_2_0
+#endif
+#ifndef macrOS_NEVER_HAVE_12_3_0
+#define macrOS_NEVER_HAVE_12_3_0
+#endif
+#ifndef macrOS_NEVER_HAVE_12_4_0
+#define macrOS_NEVER_HAVE_12_4_0
+#endif
+#ifndef macrOS_NEVER_HAVE_12_5_0
+#define macrOS_NEVER_HAVE_12_5_0
 #endif
 #ifndef macrOS_NEVER_HAVE_13_0_0
 #define macrOS_NEVER_HAVE_13_0_0
@@ -423,8 +580,17 @@
 #ifndef macrOS_NEVER_HAVE_13_1_0
 #define macrOS_NEVER_HAVE_13_1_0
 #endif
+#ifndef macrOS_NEVER_HAVE_13_2_0
+#define macrOS_NEVER_HAVE_13_2_0
+#endif
 #ifndef macrOS_NEVER_HAVE_13_3_0
 #define macrOS_NEVER_HAVE_13_3_0
+#endif
+#ifndef macrOS_NEVER_HAVE_13_4_0
+#define macrOS_NEVER_HAVE_13_4_0
+#endif
+#ifndef macrOS_NEVER_HAVE_14_0_0
+#define macrOS_NEVER_HAVE_14_0_0
 #endif
 #endif
 
@@ -513,6 +679,9 @@
 #ifndef macrOS_NEVER_HAVE_10_14_4
 #define macrOS_NEVER_HAVE_10_14_4
 #endif
+#ifndef macrOS_NEVER_HAVE_10_14_5
+#define macrOS_NEVER_HAVE_10_14_5
+#endif
 #ifndef macrOS_NEVER_HAVE_10_14_6
 #define macrOS_NEVER_HAVE_10_14_6
 #endif
@@ -521,6 +690,9 @@
 #endif
 #ifndef macrOS_NEVER_HAVE_10_15_1
 #define macrOS_NEVER_HAVE_10_15_1
+#endif
+#ifndef macrOS_NEVER_HAVE_10_15_4
+#define macrOS_NEVER_HAVE_10_15_4
 #endif
 #ifndef macrOS_NEVER_HAVE_10_16_0
 #define macrOS_NEVER_HAVE_10_16_0
