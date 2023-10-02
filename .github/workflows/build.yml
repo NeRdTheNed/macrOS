@@ -9,13 +9,13 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Install boost
         uses: MarkusJx/install-boost@v2.4.4
         id: install-boost
         with:
-            boost_version: 1.81.0
-            platform_version: 10.15
+            boost_version: 1.83.0
+            platform_version: 12
             toolset: clang
       - name: Configure library
         run: cmake -S . -B build -DCMAKE_BUILD_TYPE=Release -DCMAKE_OSX_DEPLOYMENT_TARGET=10.5 -DCMAKE_OSX_ARCHITECTURES="x86_64;arm64"
