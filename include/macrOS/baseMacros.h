@@ -71,4 +71,8 @@
 #define macrOS_NOT_COMMONLY_CALLED macrOS_MINSIZE macrOS_COLD macrOS_NEVER_INLINE
 #endif
 
+#ifndef macrOS_ASSERT
+#define macrOS_ASSERT(x) assert(x)
+#endif
+
 #endif /* macrOS_BASE_MACROS_H */

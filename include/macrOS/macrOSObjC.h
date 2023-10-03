@@ -194,11 +194,11 @@ BOOL wrapper_addClassMethod(Class class, SEL name, IMP imp, const char* types);
 /* Check here to get the signature right: https://nshipster.com/type-encodings/ */
 #define addMethod(CLASS, NAME, IMPL, SIGNATURE)                       \
     if (!addMethodToClass_wrapper(CLASS, sel(NAME), (IMP)(IMPL), (SIGNATURE))) \
-    assert(false)
+    macrOS_ASSERT(false)
 
 #define addIvar(CLASS, NAME, SIZE, SIGNATURE)                           \
     if (!class_addIvar(CLASS, NAME, SIZE, rint(log2(SIZE)), SIGNATURE)) \
-    assert(false)
+    macrOS_ASSERT(false)
 
 /* Convenience macros to call Objective C functions which may have specialised implementations.
    id objc_alloc(Class class): Equivalent to [Class alloc]
